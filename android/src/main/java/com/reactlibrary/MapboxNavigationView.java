@@ -109,6 +109,11 @@ public class MapboxNavigationView extends NavigationView implements OnNavigation
         fetchRoute();
     }
 
+    public void setJson(String json) {
+        this.json = json;
+        start();
+    }
+
     public void setShouldSimulateRoute(boolean shouldSimulateRoute) {
         this.shouldSimulateRoute = shouldSimulateRoute;
     }

@@ -74,14 +74,14 @@ public class MapboxNavigationManager extends SimpleViewManager<MapboxNavigationV
         view.setDestination(Point.fromLngLat(sources.getDouble(0), sources.getDouble(1)));
     }
 
-    @ReactProp(name = "directionsJson")
-    public void setDestination(MapboxNavigationView view, @Nullable String json) {
+    @ReactProp(name = "json")
+    public void setJson(MapboxNavigationView view, @Nullable String json) {
         if (json == null) {
-            view.setDirectionsJson(null);
+            view.setJson(null);
             return;
         }
 
-        view.setDirectionsJson(json);
+        view.setJson(json);
     }
 
     @ReactProp(name = "shouldSimulateRoute")
