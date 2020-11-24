@@ -3,8 +3,6 @@ package com.reactlibrary;
 import android.annotation.SuppressLint;
 import android.location.Location;
 
-import androidx.annotation.NonNull;
-
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.WritableMap;
@@ -47,7 +45,7 @@ public class MapboxNavigationView extends NavigationView implements OnNavigation
     private boolean isNavigating = false;
 
     public MapboxNavigationView(ThemedReactContext context) {
-        super(Objects.requireNonNull(context.getCurrentActivity()));
+        super(context);
 
         this.context = context;
 
