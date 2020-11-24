@@ -39,6 +39,7 @@ public class MapboxNavigationView extends NavigationView implements OnNavigation
 
     private DirectionsRoute directionsRoute;
 
+    private String json = null;
     private Point origin = null;
     private Point destination = null;
     private boolean shouldSimulateRoute = false;
@@ -157,8 +158,12 @@ public class MapboxNavigationView extends NavigationView implements OnNavigation
     }
 
     private void start() {
-        if (directionsRoute == null) {
+        if (directionsRoute == null && json == null) {
             return;
+        }
+
+        if (directionsRoute == null) {
+            directionsRoute = DirectionsRoute.fromJson(json);
         }
 
         NavigationMapboxMap navigationMapboxMap = retrieveNavigationMapboxMap();
